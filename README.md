@@ -1,4 +1,4 @@
-# Projekt_02 Engeto Academy: Hra Bulls and Cows
+# Hra Bulls and Cows
 
 Tento projekt je jednoduchá hra „Bulls and Cows“. 
 Program vygeneruje náhodné 4místné číslo s unikátními číslicemi 
