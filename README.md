@@ -1,4 +1,4 @@
-# Hra Bulls and Cows
+# Bulls and Cows
 
 Tento projekt je jednoduchá hra „Bulls and Cows“. 
 Program vygeneruje náhodné 4místné číslo s unikátními číslicemi 
