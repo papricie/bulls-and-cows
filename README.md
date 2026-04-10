@@ -1,55 +1,116 @@
 # Bulls and Cows
 
-Tento projekt je jednoduchá hra „Bulls and Cows“. 
-Program vygeneruje náhodné 4místné číslo s unikátními číslicemi 
-(první číslice není nula) a hráč se ho snaží uhodnout. 
-Program informuje hráče o počtu „bulls“ (správné číslo na správné pozici) a „cows“ (správné číslo, ale na špatné pozici).
+A simple number guessing game built in Python.  
+The project focuses on clean code structure, testability, and basic QA practices.
 
 ---
 
-## Instalace ##
+## About the project
 
-### 1. Klonování repozitáře
-Naklonujte nebo stáhněte tento projekt do svého počítače.
+Bulls and Cows is a classic logic game where the player tries to guess a secret 4-digit number.
 
-### 2. Vytvoření a aktivace virtuálního prostředí v terminálu
-Doporučený postup je spustit projekt v samostatném virtuálním prostředí:
+Each digit is unique and the number does not start with 0.
 
-| python -m venv venv      |               |
-|--------------------------|---------------|
-|                          |               |
-| source venv/bin/activate | # Linux / Mac |
-| venv\Scripts\activate    | # Windows     |
+After each guess, the player receives feedback:
 
-### 3. Instalace závislostí
-Projekt používá pouze standardní knihovnu Pythonu, není potřeba instalovat žádné externí balíčky.
+- **Bull** → correct digit in the correct position  
+- **Cow** → correct digit in the wrong position  
 
-### 4. Použití
-**Soubor main.py spusťte v jakémkoliv editoru kódu a bavte se**
+---
 
-## Ukázkový výstup programu
+## Rules
 
-Ahoj, zahrajeme si hru Bulls and Cows!
-Pravidla hry:
-- hledej 4místné číslo
-- bull znamená správná číslice na správné pozici
-- cow znamená správná číslice, ale na špatné pozici
+- The secret number has 4 digits
+- All digits are unique
+- The number cannot start with 0
+- The player must guess the number
+- The game ends when the player gets 4 bulls
 
-Zadej svůj tip (4 různá čísla, nezačínej nulou): 1234
+---
 
-Zadal jsi: 1234
-1 bull, 2 cows
+## Tech stack
 
-Zadej svůj tip (4 různá čísla, nezačínej nulou): 5678
+- Python 3
+- Pytest (unit testing)
+- CLI interface
 
-Zadal jsi: 5678
-0 bulls, 1 cow
+---
 
-Juhuu, uhodl jsi!
+## Project structure
+```
+bulls-and-cows/
+│
+├── src/
+│ └── bulls_and_cows/
+│ │── __init__.py
+│ ├── generator.py
+│ ├── evaluator.py
+│ ├── validator.py
+│ └── game.py
+│
+├── tests/
+│ └── test_evaluator.py
+│
+├── cli.py
+├── requirements.txt
+└── README.md
+```
 
-## Očekávaný výstup
-Výsledkem běhu skriptu je interaktivní hra v terminálu, která:
-- umožňuje hráči zadávat tipy,
-- kontroluje správný formát vstupu,
-- vypisuje počet „bulls“ a „cows“ po každém tipu,
-- končí, když hráč uhodne celé 4místné číslo.
+
+---
+
+## How to run the project
+
+Make sure you are in the project root directory.
+
+```bash
+python -m venv venv
+```
+```bash
+venv\Scripts\Activate.ps1
+```
+```bash
+pip install 
+```
+```bash
+python cli.py
+```
+
+## How to run tests
+
+Run all unit tests using:
+
+```bash
+python -m pytest -v
+```
+
+## Example gameplay
+- Welcome to Bulls and Cows!
+
+- Try to guess a 4-digit number.
+
+- Enter your guess: 1234
+- Result: 1 bull, 2 cows
+
+- Enter your guess: 5678
+- Result: 0 bulls, 0 cows
+
+## What I learned in this project
+- How to structure a Python project using src/ layout
+- Writing unit tests with pytest
+- Separating logic from input/output (clean architecture basics)
+- Debugging real bugs (edge cases with duplicates)
+- Working with Git and incremental commits
+
+## Possible future improvements
+- Web version (Flask / Streamlit)
+- Difficulty levels
+- Attempt counter / scoring system
+- Better UI/UX for CLI
+- CI pipeline with GitHub Actions
+
+## Author
+
+Patricie Hermanová
+
+Python beginner building projects for QA / junior developer role
