@@ -1,3 +1,5 @@
+from multiprocessing.util import DEBUG
+
 from bulls_and_cows.generator import generate_secret_number
 from bulls_and_cows.validator import is_valid_guess
 from bulls_and_cows.evaluator import evaluate_guess
@@ -11,8 +13,10 @@ def play_game() -> None:
 
     secret = generate_secret_number()
 
-    # DEBUG (později smažeme)
-    print("Secret:", secret)
+    DEBUG = False
+
+    if DEBUG:
+        print("Secret:", secret)
 
     while True:
         guess = input("Enter your guess: ")
