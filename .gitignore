@@ -1,3 +1,21 @@
-__pycache__
-.env
-pytest.ini
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables (only for secrets)
+.env.local
