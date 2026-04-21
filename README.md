@@ -42,11 +42,11 @@ bulls-and-cows/
 │
 ├── src/
 │ └── bulls_and_cows/
-│ │── __init__.py
-│ ├── generator.py
-│ ├── evaluator.py
-│ ├── validator.py
-│ └── game.py
+│     ├── __init__.py
+│     ├── generator.py
+│     ├── evaluator.py
+│     ├── validator.py
+│     └── game.py
 │
 ├── tests/
 │ ├── test_evaluator.py
@@ -75,7 +75,12 @@ venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 ```bash
-python cli.py
+# On Windows (PowerShell):
+$env:PYTHONPATH = "src"; python cli.py
+
+# On Linux/macOS or Git Bash:
+PYTHONPATH=src python cli.py
+
 ```
 
 ## How to run tests
