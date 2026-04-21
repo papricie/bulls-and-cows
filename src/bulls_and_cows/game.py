@@ -1,5 +1,3 @@
-from multiprocessing.util import DEBUG
-
 from bulls_and_cows.generator import generate_secret_number
 from bulls_and_cows.validator import is_valid_guess
 from bulls_and_cows.evaluator import evaluate_guess
@@ -13,22 +11,27 @@ def play_game() -> None:
 
     secret = generate_secret_number()
 
-    DEBUG = False
+    show_secret = False  # Set to True for debugging purposes
 
-    if DEBUG:
+    if show_secret:
         print("Secret:", secret)
 
-    while True:
-        guess = input("Enter your guess: ")
+    try:
+        while True:
+            guess = input("Enter your guess (or press Ctrl+C to exit): ")
 
-        if not is_valid_guess(guess):
-            print("Invalid input, try again.")
-            continue
+            if not is_valid_guess(guess):
+                print("Invalid input: Please enter 4 unique digits, not starting with 0.")
+                continue
 
-        bulls, cows = evaluate_guess(secret, guess)
+            bulls, cows = evaluate_guess(secret, guess)
 
-        print(f"{bulls} bulls, {cows} cows")
+            print(f"{bulls} bulls, {cows} cows")
 
-        if bulls == 4:
-            print("You won!")
-            break
+            if bulls == 4:
+                print("Congratulations! You won!")
+                break
+    except KeyboardInterrupt:
+        print("\nGame terminated by user. Goodbye!")
+    except EOFError:
+        print("\nInput stream closed. Goodbye!")

@@ -49,9 +49,11 @@ bulls-and-cows/
 │ └── game.py
 │
 ├── tests/
-│ └── test_evaluator.py
+│ ├── test_evaluator.py
+│ └── test_validator.py
 │
 ├── cli.py
+├── pytest.ini
 ├── requirements.txt
 └── README.md
 ```
@@ -70,7 +72,7 @@ python -m venv venv
 venv\Scripts\Activate.ps1
 ```
 ```bash
-pip install 
+pip install -r requirements.txt
 ```
 ```bash
 python cli.py

@@ -1,21 +1,11 @@
-# Python cache
+# Python
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
 
 # Virtual environment
 venv/
-env/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Environment variables (only for secrets)
-.env.local
+# Mentor instructions (personal file)
+gemini-instructions.md
